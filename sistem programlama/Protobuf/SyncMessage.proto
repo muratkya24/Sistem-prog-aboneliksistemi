@@ -1,0 +1,24 @@
+// Protobuf/SyncMessage.proto
+syntax = "proto3";
+
+message SyncMessage {
+  int32 server_id = 1;  // Sunucu ID'si
+  repeated Subscriber subscribers = 2;  // Abone listesi
+}
+
+message Subscriber {
+  int32 id = 1;
+  string name_surname = 2;
+  int64 start_date = 3;
+  int64 last_accessed = 4;
+  repeated string interests = 5;
+  bool isOnline = 6;
+  enum DemandType {
+    SUBS = 0;
+    ONLN = 1;
+    OFFL = 2;
+    DEL = 3;
+    UPDT = 4;
+  }
+  DemandType demand = 7;
+}

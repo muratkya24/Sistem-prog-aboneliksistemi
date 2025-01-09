@@ -1,0 +1,8 @@
+// Protobuf/Capacity.proto
+syntax = "proto3";
+
+message Capacity {
+  int32 server_id = 1;           // Sunucu ID'si (1, 2 veya 3)
+  int32 server_status = 2;       // Sunucunun doluluk durumu (abone sayısı)
+  int64 timestamp = 3;           // Zaman damgası (UNIX zaman damgası)
+}

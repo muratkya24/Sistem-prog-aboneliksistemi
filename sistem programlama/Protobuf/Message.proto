@@ -1,0 +1,16 @@
+// Protobuf/Message.proto
+syntax = "proto3";
+
+message Message {
+  enum DemandType {
+    CPCTY = 0;  // Kapasite sorgusu
+    STRT = 1;   // Başlatma
+    STOP = 2;   // Durdurma
+  }
+  DemandType demand = 1;          // İstek türü
+  enum ResponseType {
+    YEP = 0;  // Olumlu yanıt
+    NOP = 1;  // Olumsuz yanıt
+  }
+  ResponseType response = 2;      // Yanıt türü
+}

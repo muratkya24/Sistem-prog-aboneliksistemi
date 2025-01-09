@@ -1,0 +1,11 @@
+// Protobuf/Configuration.proto
+syntax = "proto3";
+
+message Configuration {
+  int32 fault_tolerance_level = 1;  // Hata tolerans seviyesi
+  enum MethodType {
+    STRT = 0;  // Başlatma
+    STOP = 1;  // Durdurma
+  }
+  MethodType method = 2;            // Yöntem (Başlatma veya durdurma)
+}

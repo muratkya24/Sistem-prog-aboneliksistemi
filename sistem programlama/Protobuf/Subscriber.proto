@@ -1,0 +1,19 @@
+// Protobuf/Subscriber.proto
+syntax = "proto3";
+
+message Subscriber {
+  int32 id = 1;                  // Abone ID'si
+  string name_surname = 2;       // Abone adı ve soyadı
+  int64 start_date = 3;          // Abonelik başlangıç tarihi (UNIX zaman damgası)
+  int64 last_accessed = 4;       // Son erişim tarihi (UNIX zaman damgası)
+  repeated string interests = 5; // Abone ilgi alanları
+  bool isOnline = 6;             // Çevrimiçi durumu
+  enum DemandType {
+    SUBS = 0;  // Abone olma
+    ONLN = 1;  // Giriş yapma
+    OFFL = 2;  // Çıkış yapma
+    DEL = 3;   // Abonelikten çıkma
+    UPDT = 4;  // Güncelleme
+  }
+  DemandType demand = 7;         // İstek türü
+}
